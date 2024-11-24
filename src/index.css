@@ -1,0 +1,292 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100; /* Ensure the navbar stays above other content */
+  background-color: var(--background-color);
+  transition: all 0.3s ease; /* Smooth transition for navbar */
+}
+
+.main-content {
+  margin-left: 150px;
+  /* padding: 20px; */
+}
+
+.name {
+  position: relative;
+  left: -40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.first-letter {
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out;
+  /* z-index: 1; */
+}
+
+.full-name {
+  opacity: 0;
+  transform: translateX(-5px); /* Start with a slight offset */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  left: 100%;  /* Position it to the right of the "K" */
+  top: 0;
+  font-size: 1.2rem;
+  color: #fff;
+  white-space: nowrap; 
+}
+
+.name:hover .full-name {
+  opacity: 1;  /* Full name becomes visible when hovering */
+  transform: translateX(0); 
+}
+
+.name:hover .first-letter {
+  opacity: 1;  /* Hide the first letter "K" when hovering */
+}
+
+/* Navigation links */
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 70px;
+}
+
+.nav-links a {
+  color: #5d5d5d;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: #646cff; /* Highlight color on hover */
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+} */
+
+/* Button Styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Theme Switcher */
+.theme-switch {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.theme-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.slider-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.theme-slider {
+  width: 100%;
+}
+
+section {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+section h2 {
+  margin-bottom: 5px;
+}
+
+/* Mobile Nav */
+.hamburger-menu {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #5d5d5d; /* Adjust color */
+  border-radius: 2px;
+}
+
+.mobile-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: var(--background-color); /* Use your theme background */
+  z-index: 200;
+  padding: 20px;
+}
+
+.mobile-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-navbar li {
+  margin: 20px 0;
+}
+
+.mobile-navbar a {
+  color: #5d5d5d; /* Adjust text color */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mobile-navbar a:hover {
+  color: #646cff; /* Hover color */
+}
+
+/* Ensure sections adjust on mobile */
+@media (max-width: 768px) {
+  section {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Media query for when the viewport width is 1020px or less */
+@media (max-width: 1020px) {
+  /* Hide the left navigation */
+  .navbar {
+    display: none;
+  }
+
+  /* Show the hamburger menu */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's on top */
+  }
+
+  .hamburger-menu .line {
+    width: 100%;
+    height: 3px;
+    background-color: #000; /* Adjust color to fit your theme */
+    border-radius: 2px;
+  }
+
+  /* Adjust main content */
+  .main-content {
+    margin-left: 0; /* Remove left margin since the navbar is hidden */
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+  /* Align personas links and intro to the left */
+  .personas-intro {
+    margin-left: 20px; /* Adjust left margin */
+    margin-top: 40px; /* Adjust top margin */
+  }
+
+  .personas-links {
+    justify-content: flex-start; /* Ensure links stay left-aligned */
+    width: 90%; /* Make links span most of the screen */
+    margin-left: 20px; /* Adjust left margin */
+  }
+
+  .intro {
+    margin-left: 20px; /* Adjust left margin */
+    font-size: 3.5rem; /* Adjust font size for responsiveness */
+  }
+}
+
+

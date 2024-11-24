@@ -1,0 +1,70 @@
+.personas-intro {
+  text-align: left;
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+.personas-links {
+  display: flex;
+  justify-content: flex-start; /* Align the links to the left */
+  gap: 10px;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  padding: 0 25px;
+  width: 58%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.personas-links li {
+  list-style-type: none;
+}
+
+.personas-links a {
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Font weight */
+  transition: color 0.3s ease; /* Smooth transition for color */
+  color: #5d5d5d;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.personas-links a:hover {
+  color: #646cff; /* Hover color for the links */
+}
+
+.intro {
+  width: 58%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 4.2rem;
+  line-height: 1.0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.intro p {
+  margin: 0;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .personas-links {
+    gap: 20px; /* Reduce gap for smaller screens */
+  }
+
+  .intro {
+    font-size: 3rem; /* Slightly smaller font on mobile */
+    width: 90%; /* Make intro wider on small screens */
+    margin-left: 20px; /* Adjust margin for mobile */
+  }
+
+  .personas-links a {
+    font-size: 1rem; /* Slightly smaller font size for links on mobile */
+    padding: 6px 15px; /* Adjust padding for smaller screens */
+  }
+}
+
+  
