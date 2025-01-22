@@ -1,3 +1,112 @@
+/* Fonts */
+/* Light (300) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-Light.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic (300 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-LightItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular (400) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Regular Italic (400 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-RegularItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-Medium.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium Italic (500 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-MediumItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-SemiBold.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SemiBold Italic (600 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-SemiBoldItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-Bold.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Bold Italic (700 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-BoldItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Heavy (800) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-Heavy.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Heavy Italic (800 Italic) */
+@font-face {
+  font-family: 'Saans';
+  src: url('/src/assets/fonts/Saans-TRIAL-HeavyItalic.woff2') format('woff2'),
+       url('/src/assets/fonts/Saans-TRIAL-HeavyItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -11,14 +120,13 @@
   justify-content: flex-start;
   padding: 20px;
   box-sizing: border-box;
-  z-index: 100; /* Ensure the navbar stays above other content */
+  z-index: 100;
   background-color: var(--background-color);
-  transition: all 0.3s ease; /* Smooth transition for navbar */
+  transition: all 0.3s ease;
 }
 
 .main-content {
   margin-left: 150px;
-  /* padding: 20px; */
 }
 
 .name {
@@ -33,15 +141,14 @@
 .first-letter {
   display: inline-block;
   transition: opacity 0.3s ease-in-out;
-  /* z-index: 1; */
 }
 
 .full-name {
   opacity: 0;
-  transform: translateX(-5px); /* Start with a slight offset */
+  transform: translateX(-5px);
   transition: opacity 0.4s ease, transform 0.4s ease;
   position: absolute;
-  left: 100%;  /* Position it to the right of the "K" */
+  left: 100%;
   top: 0;
   font-size: 1.2rem;
   color: #fff;
@@ -49,12 +156,12 @@
 }
 
 .name:hover .full-name {
-  opacity: 1;  /* Full name becomes visible when hovering */
+  opacity: 1;
   transform: translateX(0); 
 }
 
 .name:hover .first-letter {
-  opacity: 1;  /* Hide the first letter "K" when hovering */
+  opacity: 1;
 }
 
 /* Navigation links */
@@ -71,7 +178,7 @@
 }
 
 .nav-links a:hover {
-  color: #646cff; /* Highlight color on hover */
+  color: #646cff;
 }
 
 /* Add smooth scrolling */
@@ -80,7 +187,7 @@ html {
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Saans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -110,11 +217,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
 
 /* Button Styling */
 button {
@@ -175,7 +277,7 @@ section h2 {
 
 /* Mobile Nav */
 .hamburger-menu {
-  display: none; /* Hide by default */
+  display: none;
   flex-direction: column;
   gap: 4px;
 }
@@ -183,7 +285,7 @@ section h2 {
 .hamburger-menu .line {
   width: 25px;
   height: 3px;
-  background-color: #5d5d5d; /* Adjust color */
+  background-color: #5d5d5d;
   border-radius: 2px;
 }
 
@@ -193,7 +295,7 @@ section h2 {
   right: 0;
   width: 250px;
   height: 100%;
-  background-color: var(--background-color); /* Use your theme background */
+  background-color: var(--background-color);
   z-index: 200;
   padding: 20px;
 }
@@ -209,20 +311,20 @@ section h2 {
 }
 
 .mobile-navbar a {
-  color: #5d5d5d; /* Adjust text color */
+  color: #5d5d5d;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
 .mobile-navbar a:hover {
-  color: #646cff; /* Hover color */
+  color: #646cff; 
 }
 
 /* Ensure sections adjust on mobile */
 @media (max-width: 768px) {
   section {
-    padding: 10px; /* Less padding on smaller screens */
+    padding: 10px;
   }
 }
 
@@ -255,37 +357,37 @@ section h2 {
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 10; /* Ensure it's on top */
+    z-index: 10;
   }
 
   .hamburger-menu .line {
     width: 100%;
     height: 3px;
-    background-color: #000; /* Adjust color to fit your theme */
+    background-color: rgb(217, 144, 193);
     border-radius: 2px;
   }
 
   /* Adjust main content */
   .main-content {
-    margin-left: 0; /* Remove left margin since the navbar is hidden */
-    padding: 20px; /* Add some padding for spacing */
+    margin-left: 0;
+    padding: 20px; 
   }
 
   /* Align personas links and intro to the left */
   .personas-intro {
-    margin-left: 20px; /* Adjust left margin */
-    margin-top: 40px; /* Adjust top margin */
+    margin-left: 20px;
+    margin-top: 40px;
   }
 
   .personas-links {
-    justify-content: flex-start; /* Ensure links stay left-aligned */
-    width: 90%; /* Make links span most of the screen */
-    margin-left: 20px; /* Adjust left margin */
+    justify-content: flex-start;
+    width: 90%;
+    margin-left: 20px;
   }
 
   .intro {
-    margin-left: 20px; /* Adjust left margin */
-    font-size: 3.5rem; /* Adjust font size for responsiveness */
+    margin-left: 20px;
+    font-size: 3.5rem;
   }
 }
 

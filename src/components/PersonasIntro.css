@@ -1,3 +1,24 @@
+.persona-nav {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent links from wrapping */
+  /* scroll-behavior: smooth; */
+  -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS */
+}
+
+/* Hide scrollbar but allow scrolling */
+.persona-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.persona-nav {
+  scrollbar-width: none; /* Firefox: Hide scrollbar */
+}
+
+.persona-nav ul {
+  display: inline-flex;
+}
+
 .personas-intro {
   text-align: left;
   margin-top: 60px;
@@ -8,7 +29,7 @@
   display: flex;
   justify-content: flex-start; /* Align the links to the left */
   gap: 10px;
-  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+  /* flex-wrap: wrap; */
   padding: 0 25px;
   width: 58%;
   max-width: 900px;
@@ -34,15 +55,16 @@
 }
 
 .intro {
+  display: flex;
+  justify-content: flex-start;
   width: 58%;
-  max-width: 900px;
   margin: 0 auto;
-  font-size: 4.2rem;
-  line-height: 1.0;
+  font-size: 3.3rem;
+  line-height: 1;
   color: #fff;
   display: flex;
   justify-content: center;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .intro p {
@@ -52,13 +74,13 @@
 
 @media (max-width: 768px) {
   .personas-links {
-    gap: 20px; /* Reduce gap for smaller screens */
+    gap: -4px;
   }
 
   .intro {
     font-size: 3rem; /* Slightly smaller font on mobile */
-    width: 90%; /* Make intro wider on small screens */
-    margin-left: 20px; /* Adjust margin for mobile */
+    width: 0%; /* Make intro wider on small screens */
+    margin-left: 0px; /* Adjust margin for mobile */
   }
 
   .personas-links a {

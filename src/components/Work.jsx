@@ -1,15 +1,24 @@
 import React from 'react'
+import './Work.css'
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mouseover', () => {
+    console.log('Hovering over:', card.querySelector('.project-title').textContent);
+  });
+});
 
 const Work = () => {
   return (
     <section id="work" className="section">
-      <h2>My Work</h2>
-      <p>Hers's a glimpse into what I've been working on lately. Feel free to get in touch if you would like to learn more!</p>
-      <div className="projects">
-        {/* Example project */}
-        <div className="project">
-          <h3>Project 1</h3>
-          <p>Description of the project.</p>
+      <div class="portfolio-section">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="path-to-image.jpg" alt="Project Title" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Project Title</h3>
+            <p class="project-description">A brief description of the project.</p>
+          </div>
         </div>
       </div>
     </section>
