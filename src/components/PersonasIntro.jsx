@@ -10,7 +10,7 @@ const PersonasIntro = () => {
     designDirectors: "I thrive in complex, ambiguous environments where collaboration and adaptability are key. My diverse background allows me to bridge perspectives and ensure every solution is both thoughtful and functional.",
     productDesigners: "I'm a meticulous designer who thrives on collaboration, creating seamless, meaningful experiences that solve real problems. I'll collaborate with you, learn from you, and help make something we're proud of.",
     productManagers: "I bring a user-focused mindset and a deep understanding of both design and development, connecting strategy and execution to deliver solutions that work for users and businesses alike.",
-    engineers: "I'm {highly_technical} and while (I'm ≠ engineer), I know my way /around and can speak 'fluently' with you. I built (this.site) from scratch + (this.one) && (this.too)."
+    engineers: "I'm a results-driven engineer who excels in solving complex challenges, creating scalable, high-quality solutions that integrate seamlessly into the user experience."
   }
 
   return (
