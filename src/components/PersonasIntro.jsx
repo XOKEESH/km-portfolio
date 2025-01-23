@@ -7,9 +7,9 @@ const PersonasIntro = () => {
   const intros = {
     forAnyone: "Hello there! I'm a designer and engineer who's passionate about creating thoughtful, user-centered solutions that make life easier.",
     recruiters: "I'm a Designer and Engineer with 10+ years of cross-functional experience, combining design expertise and technical skills to deliver solutions that drive user satisfaction and business impact.",
-    designDirectors: "I take pride in my craft, and love mentoring earlier career designers. I develop cross functional partnerships, and thrive in complex, ambiguous environments.",
-    productDesigners: "I'm a systems thinker with a high bar for quality. From process to pixels, I'll collaborate with you, learn from you, and help make something we're proud of.",
-    productManagers: "I bring end-to-end product acumen, from vision and strategy to discovery and delivery. I'll partner closely with you to generate the highest impact possible.",
+    designDirectors: "I thrive in complex, ambiguous environments where collaboration and adaptability are key. My diverse background allows me to bridge perspectives and ensure every solution is both thoughtful and functional.",
+    productDesigners: "I'm a meticulous designer who thrives on collaboration, creating seamless, meaningful experiences that solve real problems. I'll collaborate with you, learn from you, and help make something we're proud of.",
+    productManagers: "I bring a user-focused mindset and a deep understanding of both design and development, connecting strategy and execution to deliver solutions that work for users and businesses alike.",
     engineers: "I'm {highly_technical} and while (I'm ≠ engineer), I know my way /around and can speak 'fluently' with you. I built (this.site) from scratch + (this.one) && (this.too)."
   }
 
