@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Work from './components/Work'
 import Values from './components/Values'
 import Background from './components/Background'
+import References from './components/References'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -20,6 +21,7 @@ const App = () => {
       <Work />
       <Values />
       <Background />
+      <References />
       <About />
       <Contact />
       <Footer />
