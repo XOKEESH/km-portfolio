@@ -1,0 +1,41 @@
+.background {
+    display: flex;
+    margin-left: 60px;
+    padding: 100px;
+    color: #fff;
+    height: 100vh;
+  }
+  
+  /* .background-left, .background-right {
+    width: 45%;
+  } */
+  
+  .background-left p {
+    margin-left: 60px;
+    margin: 0;
+    padding-left: 145px;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    color: #5d5d5d;
+    font-weight: 500;
+    max-width: 400px;
+  }
+
+  .background-right p {
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #5d5d5d;
+    font-weight: 500;
+    max-width: 400px;
+    margin-left: 280px;
+    padding-left: 280px;
+  }
+  
+  .background-right .highlight {
+    font-style: italic;
+    font-weight: 700;
+    color: #bcbaba;
+  }
+  
