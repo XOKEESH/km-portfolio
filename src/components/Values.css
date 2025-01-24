@@ -1,0 +1,49 @@
+/* .Values {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+
+.values {
+    margin: 0 auto;
+    font-size: 2rem;
+    justify-content: center;
+    font-weight: 600;
+  }
+  
+  .values p {
+    margin: 0;
+    padding-top: 30px;
+    font-weight: 500;
+    color: #5d5d5d;
+    font-size: 1rem;
+  } */
+
+.values {
+    display: flex;
+    margin-left: 60px;
+    padding: 100px;
+    color: #fff;
+    height: 100vh;
+  }
+  
+  .values h2 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-left: 60px;
+    margin: 0;
+    padding-left: 145px;
+  }
+  
+  .values p {
+    margin-top: 140px;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-left: 280px;
+    padding-left: 280px;
+    color: #5d5d5d;
+    font-weight: 500;
+    max-width: 500px;
+  }
+  
