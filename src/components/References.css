@@ -1,0 +1,38 @@
+.references {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 100px;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .reference-card {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .quote {
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .author {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #fff;
+  }
+  
+  .role {
+    font-weight: 400;
+    color: #aaa;
+  }
+  
+  @media (max-width: 768px) {
+    .references {
+      grid-template-columns: 1fr;
+      padding: 50px;
+    }
+  }
+  

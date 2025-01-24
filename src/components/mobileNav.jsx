@@ -11,6 +11,7 @@ const MobileNav = ({ menuVisible, toggleMenu }) => {
           <li><Link to="work" smooth={true} duration={500} onClick={toggleMenu}>Work</Link></li>
           <li><Link to="values" smooth={true} duration={500} onClick={toggleMenu}>Values</Link></li>
           <li><Link to="background" smooth={true} duration={500} onClick={toggleMenu}>Background</Link></li>
+          <li><Link to="references" smooth={true} duration={500} onClick={toggleMenu}>References</Link></li>
           <li><Link to="about" smooth={true} duration={500} onClick={toggleMenu}>About</Link></li>
           <li><Link to="contact" smooth={true} duration={500} onClick={toggleMenu}>Contact</Link></li>
         </ul>
