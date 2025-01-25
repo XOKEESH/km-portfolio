@@ -1,40 +1,38 @@
 .references {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    color: #fff;
-    margin-left: 300px;
-    padding: 150px 100px;
-  }
+    grid-template-columns: repeat(2, 38%);
+    grid-template-rows: repeat(3, 28%);
+    margin-left: 310px;
+    padding-top: 100px;
+}
   
-  .reference-card {
+.reference-card {
     font-size: 1rem;
     line-height: 1.2;
     max-width: 330px;
-    max-height: 180px;
-  }
+}
   
-  .quote {
+.quote {
     margin-bottom: 8px;
     color: #5d5d5d;
     font-weight: 500;
-  }
+}
   
-  .author {
-    font-weight: 700;
-    margin-top: 5px;
-    color: #fff;
-  }
+.author {
+  font-weight: 700;
+  margin-top: 5px;
+  color: #fff;
+}
   
-  .role {
-    font-weight: 500;
-    color: #aaa;
-  }
+.role {
+  font-weight: 500;
+  color: #aaa;
+}
   
-  @media (max-width: 768px) {
-    .references {
-      grid-template-columns: 1fr;
-      /* padding: 50px; */
-    }
+@media (max-width: 768px) {
+  .references {
+    grid-template-columns: 1fr;
+    /* padding: 50px; */
   }
+}
   

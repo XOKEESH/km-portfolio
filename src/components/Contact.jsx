@@ -3,7 +3,7 @@ import './Contact.css'
 
 const Contact = () => {
   return (
-    <section className="contact-section">
+    <section className="contact">
       <img src='/assets/KMPhoto.png' alt="Kisha Martin Photo" className="contact-image" />
       <div className="contact-info">
         <p>Design and code by Kisha Martin</p>

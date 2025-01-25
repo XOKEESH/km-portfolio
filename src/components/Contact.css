@@ -1,4 +1,4 @@
-.contact-section {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +35,7 @@
     color: #646cff;
   }
   
-  .contact-section p {
+  .contact p {
     color: #5d5d5d;
     font-weight: 500;
     margin-bottom: 0px;
