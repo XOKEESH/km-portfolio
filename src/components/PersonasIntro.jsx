@@ -28,7 +28,7 @@ const PersonasIntro = () => {
       </div> 
 
         {/* Display Selected Intro */}
-        <div className="intro">
+        <div className="intro"> 
           <p>{intros[selectedPersona]}</p> 
       </div>
     </div>

@@ -19,7 +19,7 @@ const References = () => {
         role: "Software Engineer"
     },
     {
-        quote: "Kisha is a motivated and forward-thinking UX designer. She's wonderful to work with and has an impeccable eye for detail.",
+        quote: "Kisha is a motivated and forward-thinking UX designer. She's wonderful to work with and has an impeccable eye for detail. I can't say enough great things about Kisha and I look forward to seeing where her leadership and talents take her.",
         author: "Marianna Hernandez",
         role: "UX Researcher"
     },

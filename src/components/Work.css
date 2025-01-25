@@ -6,6 +6,35 @@
   padding-top: 400px;
 }
 
+.project-links {
+  list-style-type: none;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #5d5d5d;
+  font-weight: bold;
+}
+
+.project-links li {
+  display: inline-block;
+}
+
+.project-links a {
+  color: #5d5d5d;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.project-links a:hover {
+  color: #646cff;
+}
+
+.project-links a.active {
+  color: #fff;
+  font-weight: bold;
+}
+
 .project-card {
   max-width: 325px;
   font-size: 1rem;
