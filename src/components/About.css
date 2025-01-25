@@ -1,0 +1,41 @@
+.about {
+    display: flex;
+    margin-left: 60px;
+    padding: 100px;
+    color: #fff;
+    height: 100vh;
+}
+  
+.about h2 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    margin-left: 60px;
+    margin: 0;
+    margin-top: 40px;
+    padding-left: 145px;
+    max-width: 500px;
+}
+
+.about-left p {
+    margin-left: 60px;
+    margin: 0;
+    padding-left: 145px;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #5d5d5d;
+    font-weight: 500;
+    max-width: 390px;
+}
+
+.about-right p {
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #5d5d5d;
+    font-weight: 500;
+    max-width: 390px;
+    margin-left: 280px;
+    padding-left: 280px;
+}
