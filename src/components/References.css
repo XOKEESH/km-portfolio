@@ -1,26 +1,28 @@
 .references {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 100px;
-    background-color: #000;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
     color: #fff;
+    margin-left: 300px;
+    padding: 150px 100px;
   }
   
   .reference-card {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.2;
+    max-width: 330px;
+    max-height: 180px;
   }
   
   .quote {
-    font-weight: 400;
-    margin-bottom: 15px;
-    color: #fff;
+    margin-bottom: 8px;
+    color: #5d5d5d;
+    font-weight: 500;
   }
   
   .author {
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: 5px;
     color: #fff;
   }
   
@@ -32,7 +34,7 @@
   @media (max-width: 768px) {
     .references {
       grid-template-columns: 1fr;
-      padding: 50px;
+      /* padding: 50px; */
     }
   }
   
