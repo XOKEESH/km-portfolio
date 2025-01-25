@@ -42,16 +42,21 @@
 }
 
 .personas-links a {
-  text-decoration: none; /* Remove underline */
-  font-weight: 500; /* Font weight */
-  transition: color 0.3s ease; /* Smooth transition for color */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease; 
   color: #5d5d5d;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .personas-links a:hover {
-  color: #646cff; /* Hover color for the links */
+  color: #646cff; 
+}
+
+.personas-links a.active {
+  font-weight: bold;
+  color: #fff;
 }
 
 .intro {

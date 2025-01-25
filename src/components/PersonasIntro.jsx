@@ -18,12 +18,12 @@ const PersonasIntro = () => {
       {/* Persona Links */}
       <div className="persona-nav">
       <ul className="personas-links">
-        <li><a href="#" onClick={() => setSelectedPersona('forAnyone')}>For Anyone</a></li>
-        <li><a href="#" onClick={() => setSelectedPersona('recruiters')}>Recruiters</a></li>
-        <li><a href="#" onClick={() => setSelectedPersona('designDirectors')}>Design Directors</a></li>
-        <li><a href="#" onClick={() => setSelectedPersona('productDesigners')}>Product Designers</a></li>
-        <li><a href="#" onClick={() => setSelectedPersona('productManagers')}>Product Managers</a></li>
-        <li><a href="#" onClick={() => setSelectedPersona('engineers')}>Engineers</a></li>
+        <li><a href="#" className={selectedPersona === 'forAnyone' ? 'active' : ''} onClick={() => setSelectedPersona('forAnyone')}>For Anyone</a></li>
+        <li><a href="#" className={selectedPersona === 'recruiters' ? 'active' : ''} onClick={() => setSelectedPersona('recruiters')}>Recruiters</a></li>
+        <li><a href="#" className={selectedPersona === 'designDirectors' ? 'active' : ''} onClick={() => setSelectedPersona('designDirectors')}>Design Directors</a></li>
+        <li><a href="#" className={selectedPersona === 'productDesigners' ? 'active' : ''} onClick={() => setSelectedPersona('productDesigners')}>Product Designers</a></li>
+        <li><a href="#" className={selectedPersona === 'productManagers' ? 'active' : ''} onClick={() => setSelectedPersona('productManagers')}>Product Managers</a></li>
+        <li><a href="#" className={selectedPersona === 'engineers' ? 'active' : ''} onClick={() => setSelectedPersona('engineers')}>Engineers</a></li>
       </ul>
       </div> 
 
