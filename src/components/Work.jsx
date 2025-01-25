@@ -1,27 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Work.css'
 
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mouseover', () => {
-    console.log('Hovering over:', card.querySelector('.project-title').textContent);
-  });
-});
-
 const Work = () => {
+  const work = [
+    {
+      company: "Wintrust Bank",
+      title: "UX Designer",
+      year: "2022",
+      description: "Supporting Wintrust customers by providing access to financial literacy tools and resources within their banking app.",
+      thumbnail: ""
+    },
+    {
+      company: "Cottage Software",
+      title: "UX Designer",
+      year: "2022",
+      description: "New onboarding experience and website redesign for a freelancing platform for Startups and Software Engineers.",
+      thumbnail: ""
+    },
+    {
+      company: "Effacé Aestetics",
+      title: "Product Designer",
+      year: "2022",
+      description: "Product shop redesign for a Los Angeles based Medical Spa.",
+      thumbnail: ""
+    }
+  ]
+
   return (
-    <section id="work" className="section">
-      <div class="portfolio-section">
-        <div class="project-card">
-          <div class="project-image">
-            <img src="path-to-image.jpg" alt="Project Title" />
+    <section className="projects">
+      {work.map((project, index) => (
+        <div className="project-card" key={index}>
+          <div className="project-header">
+            <p className="project-company">
+              {project.company} · <span className="project-title">{project.title} ·</span> <span className="project-year"> {project.year}</span>
+            </p>
           </div>
-          <div class="project-info">
-            <h3 class="project-title">Project Title</h3>
-            <p class="project-description">A brief description of the project.</p>
-          </div>
+          <p className="project-description">{project.description}</p>
         </div>
-      </div>
-    </section>
+      ))}
+    </section>  
   )
 }
 
