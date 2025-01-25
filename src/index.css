@@ -181,6 +181,11 @@
   color: #646cff;
 }
 
+.nav-links li .active-link {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
 /* Add smooth scrolling */
 html {
   scroll-behavior: smooth;

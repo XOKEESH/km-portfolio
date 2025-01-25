@@ -38,34 +38,29 @@ const Navbar = () => {
       </div>
 
       <ul className="nav-links">
-        <li><Link to="intro" smooth={true} duration={500}>Intro</Link></li>
-        <li><Link to="work" smooth={true} duration={500}>Work</Link></li>
-        <li><Link to="values" smooth={true} duration={500}>Values</Link></li>
-        <li><Link to="background" smooth={true} duration={500}>Background</Link></li>
-        <li><Link to="references" smooth={true} duration={500}>References</Link></li>
-        <li><Link to="about" smooth={true} duration={500}>About</Link></li>
-        <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
+        <li><Link to="intro" smooth={true} duration={500} spy={true} activeClass="active-link">Intro</Link></li>
+        <li><Link to="work" smooth={true} duration={500} spy={true} activeClass="active-link">Work</Link></li>
+        <li><Link to="values" smooth={true} duration={500} spy={true} activeClass="active-link">Values</Link></li>
+        <li><Link to="background" smooth={true} duration={500} spy={true} activeClass="active-link">Background</Link></li>
+        <li><Link to="references" smooth={true} duration={500} spy={true} activeClass="active-link">References</Link></li>
+        <li><Link to="about" smooth={true} duration={500} spy={true} activeClass="active-link">About</Link></li>
+        <li><Link to="contact" smooth={true} duration={500} spy={true} activeClass="active-link">Contact</Link></li>
       </ul>
 
       {/* Hamburger Menu */}
-      <div className="App">{/* Hamburger Icon */}
-      <div className="hamburger-menu"
-        onClick={() => setMenuVisible(!menuVisible)}
-      >
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <MobileNav menuVisible={menuVisible} toggleMenu={() => setMenuVisible(!menuVisible)} />
+      <div className="App">
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+        <MobileNav menuVisible={menuVisible} toggleMenu={toggleMenu} />
       </div>
 
       <div className="theme-switch">
         <div className="theme-icon-wrapper">
           <div className="theme-icon">
-            {isColorPicking
-              ? (
+            {isColorPicking ? (
                 <>
                   <button
                     className="close-btn"
@@ -75,17 +70,14 @@ const Navbar = () => {
                   </button>
                   <ColorSlider hue={hue} setHue={setHue} />
                 </>
-              )
-              : (
+              ) : (
                 <div className="theme-btns">
                   <button
                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   >
                     {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
                   </button>
-                  <button
-                    onClick={() => setIsColorPicking(true)}
-                  >
+                  <button onClick={() => setIsColorPicking(true)}>
                     <SwatchIcon />
                   </button>
                 </div>
@@ -98,6 +90,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-
-
