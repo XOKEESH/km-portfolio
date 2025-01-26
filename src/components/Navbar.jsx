@@ -6,7 +6,6 @@ import MobileNav from './MobileNav'
 
 const Navbar = () => {
   const [currentTheme, setCurrentTheme] = useState(0)
-  const [isColorPicking, setIsColorPicking] = useState(false)
   const [sliderVisible, setSliderVisible] = useState(false) 
   const [hue, setHue] = useState(240)
   const [theme, setTheme] = useState('dark')
@@ -63,25 +62,14 @@ const Navbar = () => {
       <div className="theme-switch">
         <div className="theme-icon-wrapper">
           <div className="theme-icon">
-            {isColorPicking ? (
-                <>
+              <div className="theme-btns">
                   <button
-                    className="close-btn"
-                    onClick={() => setIsColorPicking(false)}
-                  >
-                    Close
-                  </button>
-                  <ColorSlider hue={hue} setHue={setHue} />
-                </>
-              ) : (
-                <div className="theme-btns">
-                  <button
-                    onClick={() => setSliderVisible(!sliderVisible)} // Toggle slider visibility
+                    onClick={() => setSliderVisible(!sliderVisible)}
                   >
                     <SunIcon />
                   </button>
 
-                  {sliderVisible && ( // Render slider when sliderVisible is true
+                  {sliderVisible && (
                     <div className="theme-slider">
                       <div className="slider-track">
                         {Array(17)
@@ -98,23 +86,19 @@ const Navbar = () => {
                       </div>
                       <div
                         className="slider-icon"
-                        style={{ top: `${currentTheme * 30}px` }}
+                        style={{ top: `${currentTheme * (100 / 17)}%` }}
                       >
                         <SunIcon />
                       </div>
                     </div>
                   )}
 
-                  <button
-                    onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                  >
-                    {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-                  </button>
-                  <button onClick={() => setIsColorPicking(true)}>
-                    <SwatchIcon />
-                  </button>
-                </div>
-              )}
+                <button
+                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                >
+                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
