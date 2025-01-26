@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import { SunIcon, MoonIcon, SwatchIcon } from '@heroicons/react/24/outline'
-import ColorSlider from './ColorSlider'
+import './Themes.css'
 import MobileNav from './MobileNav'
 
 const Navbar = () => {
   const [currentTheme, setCurrentTheme] = useState(0)
   const [isColorPicking, setIsColorPicking] = useState(false)
+  const [sliderVisible, setSliderVisible] = useState(false) 
   const [hue, setHue] = useState(240)
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
   const [menuVisible, setMenuVisible] = useState(false)
 
   useEffect(() => {
@@ -29,6 +30,8 @@ const Navbar = () => {
   }, [hue])
 
   const toggleMenu = () => setMenuVisible(!menuVisible)
+
+  const toggleSlider = () => setSliderVisible(!sliderVisible)
 
   return (
     <nav className="navbar">
@@ -72,6 +75,31 @@ const Navbar = () => {
                 </>
               ) : (
                 <div className="theme-btns">
+                  {/* <div className="theme-selector">
+                    <button onClick={() => setCurrentTheme((currentTheme + 1) % 17)}><SunIcon /></button>
+                  </div> */}
+
+                <div className="theme-slider">
+                  <div className="slider-track">
+                    {Array(17)
+                      .fill(null)
+                      .map((_, index) => (
+                        <div
+                          key={index}
+                          className={`slider-marker ${index === currentTheme ? 'active' : ''}`}
+                          onClick={() => setCurrentTheme(index)}
+                        >
+                          ·
+                        </div>
+                      ))}
+                  </div>
+                  <div
+                    className="slider-icon"
+                    style={{ top: `${currentTheme * 30}px` }}
+                  >
+                    <SunIcon />
+                  </div>
+                </div>
                   <button
                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   >
@@ -81,10 +109,13 @@ const Navbar = () => {
                     <SwatchIcon />
                   </button>
                 </div>
-              )}
-          </div>
-        </div>
+              )}  
+              </div>
+            </div>    
       </div>
+
+      {/* Overlay */}
+      <div className="overlay"></div>
     </nav>
   )
 }

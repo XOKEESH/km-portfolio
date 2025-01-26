@@ -243,33 +243,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Theme Switcher */
-.theme-switch {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-.theme-icon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.theme-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.slider-wrapper {
-  position: relative;
-  margin-top: 10px;
-}
-
-.theme-slider {
-  width: 100%;
-}
-
 section {
   min-height: 100vh; 
   display: flex;
