@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
-import { SunIcon, MoonIcon, SwatchIcon } from '@heroicons/react/24/outline'
+import { SunIcon, MusicalNoteIcon} from '@heroicons/react/24/outline'
 import './Themes.css'
 import MobileNav from './MobileNav'
 
@@ -10,6 +10,8 @@ const Navbar = () => {
   const [hue, setHue] = useState(240)
   const [theme, setTheme] = useState('dark')
   const [menuVisible, setMenuVisible] = useState(false)
+  const [spotifyVisible, setSpotifyVisible] = useState(false)
+  const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
     const themes = [
@@ -31,6 +33,13 @@ const Navbar = () => {
   const toggleMenu = () => setMenuVisible(!menuVisible)
 
   const toggleSlider = () => setSliderVisible(!sliderVisible)
+
+  const handleSpotifyToggle = () => {
+    setSpotifyVisible(!spotifyVisible)
+    if (!spotifyVisible && !playing) {
+      setPlaying(true)
+    }
+  }
 
   return (
     <nav className="navbar">
@@ -92,19 +101,40 @@ const Navbar = () => {
                       </div>
                     </div>
                   )}
+                  
+                  {/* <button 
+                    onClick={() => setSpotifyVisible(!spotifyVisible)}>
+                      <MusicalNoteIcon />
+                  </button> */}
+                  <button onClick={handleSpotifyToggle}>
+                  <MusicalNoteIcon />
+                </button>
 
-                <button
-                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                >
-                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-              </button>
+              {/* Spotify */}
+              {spotifyVisible && (
+                <div className="spotify-overlay">
+                  <iframe
+                    src="https://open.spotify.com/embed/playlist/5vVSfOsF8YRueAI1dOI0Lh?si=9fee3da971a440a8"
+                    width="285px"
+                    height="152px"
+                    frameBorder="0"
+                    allow="encrypted-media"
+                    title="Spotify Playlist"
+                    onLoad={() => {
+                      if (!playing) { 
+                        setPlaying(true)
+                      }
+                    }}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
       {/* Overlay */}
-      <div className="overlay"></div>
+        <div className="overlay"></div>
     </nav>
   )
 }

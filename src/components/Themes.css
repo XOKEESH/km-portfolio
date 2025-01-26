@@ -15,6 +15,22 @@ body {
   z-index: 9999;
 }
 
+.spotify-overlay {
+  position: fixed;
+  top: 85%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.spotify-overlay iframe {
+  border-radius: 14px;
+  border: none;
+  background-color: transparent;
+}
+
 [data-theme="light"] .overlay {
   --overlay-color: rgba(255, 255, 255, 0.3); 
 }
@@ -76,7 +92,7 @@ body {
 }
 
 [data-theme="theme-14"] .overlay {
-  --overlay-color: #b7d4f5;
+  --overlay-color: #b7d4f5; 
 }
 
 [data-theme="theme-15"] .overlay {
