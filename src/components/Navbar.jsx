@@ -75,31 +75,36 @@ const Navbar = () => {
                 </>
               ) : (
                 <div className="theme-btns">
-                  {/* <div className="theme-selector">
-                    <button onClick={() => setCurrentTheme((currentTheme + 1) % 17)}><SunIcon /></button>
-                  </div> */}
-
-                <div className="theme-slider">
-                  <div className="slider-track">
-                    {Array(17)
-                      .fill(null)
-                      .map((_, index) => (
-                        <div
-                          key={index}
-                          className={`slider-marker ${index === currentTheme ? 'active' : ''}`}
-                          onClick={() => setCurrentTheme(index)}
-                        >
-                          ·
-                        </div>
-                      ))}
-                  </div>
-                  <div
-                    className="slider-icon"
-                    style={{ top: `${currentTheme * 30}px` }}
+                  <button
+                    onClick={() => setSliderVisible(!sliderVisible)} // Toggle slider visibility
                   >
                     <SunIcon />
-                  </div>
-                </div>
+                  </button>
+
+                  {sliderVisible && ( // Render slider when sliderVisible is true
+                    <div className="theme-slider">
+                      <div className="slider-track">
+                        {Array(17)
+                          .fill(null)
+                          .map((_, index) => (
+                            <div
+                              key={index}
+                              className={`slider-marker ${index === currentTheme ? 'active' : ''}`}
+                              onClick={() => setCurrentTheme(index)}
+                            >
+                              ·
+                            </div>
+                          ))}
+                      </div>
+                      <div
+                        className="slider-icon"
+                        style={{ top: `${currentTheme * 30}px` }}
+                      >
+                        <SunIcon />
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   >
@@ -109,9 +114,9 @@ const Navbar = () => {
                     <SwatchIcon />
                   </button>
                 </div>
-              )}  
-              </div>
-            </div>    
+              )}
+          </div>
+        </div>
       </div>
 
       {/* Overlay */}
