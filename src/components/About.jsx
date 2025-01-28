@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './About.css'
+import Gallery from './Gallery' 
 
 const About = () => {
+  const [showGallery, setShowGallery] = useState(false)
+
   return (
     <section className="about">
       <h2>Dreamer, Creative, and Lover of the Arts</h2>
@@ -18,6 +21,15 @@ const About = () => {
           I'm excited to collaborate on projects that push boundaries, create impact, and bring people closer to what matters.
         </p>
       </div>
+
+      {/* Button to toggle the gallery */}
+      <div className="gallery-section">
+      <button onClick={() => setShowGallery(!showGallery)}>
+        {showGallery ? 'Hide Gallery' : 'View Gallery'}
+      </button>
+
+      {showGallery && <Gallery />}
+    </div>
   </section>
   )
 }
