@@ -1,14 +1,55 @@
 .work {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 44%);
   grid-template-rows: repeat(2, 18%);
   margin-left: 310px;
+  padding-top: 400px; */
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 310px;
   padding-top: 400px;
+  gap: 20px;
 }
 
 .project-links {
   list-style-type: none;
 }
+
+/* .project-thumbnail {
+  display: none;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-thumbnail {
+  display: block;
+  opacity: 1;
+} */
+
+.thumbnail-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.project-thumbnail {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+/* Project Cards */
 
 .separator {
   margin: 0 0.5rem;

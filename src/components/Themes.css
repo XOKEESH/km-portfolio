@@ -15,6 +15,22 @@ body {
   z-index: 9999;
 }
 
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, #5d5d5d 1px, transparent 1px),
+    linear-gradient(to right, #5d5d5d 0.5px, transparent 0.5px);
+  background-position: 416px 0, 406px 0;
+  background-size: 120px 100%, 120px 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+}
+
 .spotify-overlay {
   position: fixed;
   top: 85%;

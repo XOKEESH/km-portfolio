@@ -5,7 +5,7 @@ const PersonasIntro = () => {
   const [selectedPersona, setSelectedPersona] = useState('forAnyone')
 
   const intros = {
-    forAnyone: "Hello there! I'm a designer and engineer who's passionate about creating thoughtful, user-centered solutions that make life easier.",
+    forAnyone: "Hello there, I'm a designer and engineer who's passionate about creating thoughtful, user-centered solutions that make life easier.",
     recruiters: "With 10+ years of cross-functional experience, I combine design expertise and technical skills to deliver solutions that drive user satisfaction and business impact.",
     designDirectors: "I thrive in complex, ambiguous environments where collaboration and adaptability are key. My diverse background allows me to bridge perspectives and ensure every solution is both thoughtful and functional.",
     productDesigners: "I'm a meticulous designer who thrives on collaboration, creating seamless, meaningful experiences that solve real problems. I'll collaborate with you, learn from you, and help make something we're proud of.",

@@ -10,6 +10,7 @@ const Navbar = () => {
   const [hue, setHue] = useState(240)
   const [theme, setTheme] = useState('dark')
   const [menuVisible, setMenuVisible] = useState(false)
+  const [gridVisible, setGridVisible] = useState(false)
   const [spotifyVisible, setSpotifyVisible] = useState(false)
   const [playing, setPlaying] = useState(false)
 
@@ -33,6 +34,8 @@ const Navbar = () => {
   const toggleMenu = () => setMenuVisible(!menuVisible)
 
   const toggleSlider = () => setSliderVisible(!sliderVisible)
+
+  const handleGridToggle = () => { setGridVisible(!gridVisible) }
 
   const handleSpotifyToggle = () => {
     setSpotifyVisible(!spotifyVisible)
@@ -68,6 +71,7 @@ const Navbar = () => {
         <MobileNav menuVisible={menuVisible} toggleMenu={toggleMenu} />
       </div>
 
+      {/* Theme Changer */}  
       <div className="theme-switch">
         <div className="theme-icon-wrapper">
           <div className="theme-icon">
@@ -101,33 +105,40 @@ const Navbar = () => {
                       </div>
                     </div>
                   )}
-                  
-                  {/* <button 
-                    onClick={() => setSpotifyVisible(!spotifyVisible)}>
-                      <MusicalNoteIcon />
-                  </button> */}
-                  <button onClick={handleSpotifyToggle}>
+
+                {/* Grid Overlay */}
+                {/* <button className="grid-btn"
+                      onClick={() => setGridVisible(!gridVisible)}
+                  >
+                    |||||
+                  </button>
+                    
+                {gridVisible && (
+                    <div className="grid-overlay"> </div>
+                )}   */}
+                
+                {/* Spotify */}  
+                {/* <button onClick={handleSpotifyToggle}>
                   <MusicalNoteIcon />
                 </button>
 
-              {/* Spotify */}
-              {spotifyVisible && (
-                <div className="spotify-overlay">
-                  <iframe
-                    src="https://open.spotify.com/embed/playlist/5vVSfOsF8YRueAI1dOI0Lh?si=9fee3da971a440a8"
-                    width="285px"
-                    height="152px"
-                    frameBorder="0"
-                    allow="encrypted-media"
-                    title="Spotify Playlist"
-                    onLoad={() => {
+                  {spotifyVisible && (
+                    <div className="spotify-overlay">
+                      <iframe
+                        src="https://open.spotify.com/embed/playlist/5vVSfOsF8YRueAI1dOI0Lh?si=9fee3da971a440a8"
+                        width="285px"
+                        height="152px"
+                        frameBorder="0"
+                        allow="encrypted-media"
+                        title="Spotify Playlist"
+                        onLoad={() => {
                       if (!playing) { 
-                        setPlaying(true)
+                      setPlaying(true)
                       }
                     }}
                   ></iframe>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>
