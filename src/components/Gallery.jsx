@@ -5,19 +5,29 @@ import 'react-image-lightbox/style.css'
 import './Gallery.css'
 
 const images = [
-  { id: 1, src: 'your-image-url1.jpg', alt: 'Description 1' },
-  { id: 2, src: 'your-image-url2.jpg', alt: 'Description 2' },
-  { id: 3, src: 'your-image-url3.jpg', alt: 'Description 3' },
+  { id: 1, src: '/assets/workshop2.png', alt: 'Description 1' },
+  { id: 2, src: '/assets/cardi.png', alt: 'Description 2' },
+  { id: 3, src: '/assets/workshop.png', alt: 'Description 3' },
+  { id: 4, src: '/assets/kniko.JPG', alt: 'Description 4' },
+  { id: 5, src: '/assets/IMG_6345.jpg', alt: 'Description 5' },
+  { id: 6, src: '/assets/stormi.png', alt: 'Description 6' },
+  { id: 5, src: '/assets/IMG_6345.jpg', alt: 'Description 5' },
+  { id: 6, src: '/assets/stormi.png', alt: 'Description 6' },
 ]
 
 const Gallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  // const [galleryVisible, setGalleryVisible] = useState(false)
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index)
     setLightboxOpen(true)
   }
+
+  // const toggleGallery = () => {
+  //   setGalleryVisible(!galleryVisible)
+  // }
 
   const breakpointColumnsObj = {
     default: 4, // 4 columns on large screens
@@ -34,6 +44,7 @@ const Gallery = () => {
         columnClassName="masonry-grid_column"
       >
         {images.map((image, index) => (
+          <div key={image.id} className="gallery-item" onClick={() => openLightbox(index)}>
           <img
             key={image.id}
             src={image.src}
@@ -41,6 +52,7 @@ const Gallery = () => {
             className="gallery-image"
             onClick={() => openLightbox(index)}
           />
+          </div>
         ))}
       </Masonry>
 

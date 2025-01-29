@@ -1,7 +1,4 @@
 .work {
-  /* display: grid; */
-  /* grid-template-columns: repeat(2, 44%);
-  grid-template-rows: repeat(2, 18%); */
   display: flex;
   flex-direction: column;
   margin-left: 310px;
@@ -14,25 +11,8 @@
   margin-left: -40px;
 }
 
-/* .project-thumbnail {
-  display: none;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin-top: 15px;
-  border-radius: 8px;
-  object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.project-card:hover .project-thumbnail {
-  display: block;
-  opacity: 1;
-} */
-
 .thumbnail-section {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   height: 200px;
   margin-bottom: 5px;
@@ -44,7 +24,6 @@
   max-width: 120%;
   max-height: 120%;
   border-radius: 4px;
-  /* object-fit: cover; */
   margin-left: -315px;
   padding: 0;
   opacity: 1;
