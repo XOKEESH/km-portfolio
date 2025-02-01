@@ -57,14 +57,11 @@
   padding: 0;
 }  
 
-.gallery-links li {
-  display: inline-block;
-}
-
 .gallery-links a {
   color: #5d5d5d;
   text-decoration: none;
   font-size: 1rem;
+  margin-right: 650px;
 }
 
 .gallery-links a:hover {
@@ -79,6 +76,7 @@
   .gallery-container { 
     width: 80%;
     margin: 20px auto;
+    margin-left: 150px;
   }
   
   .masonry-grid {
@@ -110,7 +108,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: 8px;

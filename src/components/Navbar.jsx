@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-scroll'
 import { SunIcon, MusicalNoteIcon} from '@heroicons/react/24/outline'
 import './Themes.css'
@@ -13,6 +13,8 @@ const Navbar = () => {
   const [gridVisible, setGridVisible] = useState(false)
   const [spotifyVisible, setSpotifyVisible] = useState(false)
   const [playing, setPlaying] = useState(false)
+  const [isDragging, setIsDragging] = useState(false)
+  const sliderTrackRef = useRef(null)
 
   useEffect(() => {
     const themes = [
@@ -31,6 +33,27 @@ const Navbar = () => {
     document.documentElement.style.setProperty('--_hue', hue)
   }, [hue])
 
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener("mousemove", handleDragMove);
+      document.addEventListener("mouseup", handleDragEnd);
+      document.addEventListener("touchmove", handleDragMove);
+      document.addEventListener("touchend", handleDragEnd);
+    } else {
+      document.removeEventListener("mousemove", handleDragMove);
+      document.removeEventListener("mouseup", handleDragEnd);
+      document.removeEventListener("touchmove", handleDragMove);
+      document.removeEventListener("touchend", handleDragEnd);
+    }
+  
+    return () => {
+      document.removeEventListener("mousemove", handleDragMove);
+      document.removeEventListener("mouseup", handleDragEnd);
+      document.removeEventListener("touchmove", handleDragMove);
+      document.removeEventListener("touchend", handleDragEnd);
+    };
+  }, [isDragging])
+
   const toggleMenu = () => setMenuVisible(!menuVisible)
 
   const toggleSlider = () => setSliderVisible(!sliderVisible)
@@ -42,6 +65,34 @@ const Navbar = () => {
     if (!spotifyVisible && !playing) {
       setPlaying(true)
     }
+  }
+
+  const handleDragStart = (event) => {
+    event.preventDefault()
+    setIsDragging(true)
+  }
+  
+  const handleDragMove = (event) => {
+    if (!isDragging) return
+  
+    requestAnimationFrame(() => {
+      const track = sliderTrackRef.current;
+      if (!track) return;
+
+      const rect = track.getBoundingClientRect();
+      const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+      
+      let relativeY = clientY - rect.top;
+      
+      let newTheme = Math.round((relativeY / rect.height) * 16)
+      newTheme = Math.max(0, Math.min(16, newTheme))
+
+      setCurrentTheme(newTheme);
+    })
+  }
+
+  const handleDragEnd = () => {
+    setIsDragging(false)
   }
 
   return (
@@ -83,25 +134,58 @@ const Navbar = () => {
                   </button>
 
                   {sliderVisible && (
-                    <div className="theme-slider">
-                      <div className="slider-track">
-                        {Array(17)
-                          .fill(null)
-                          .map((_, index) => (
+                    // <div className="theme-slider">
+                    //   <div className="slider-track">
+                    //     {Array(17)
+                    //       .fill(null)
+                    //       .map((_, index) => (
+                    //         <div
+                    //           key={index}
+                    //           className={`slider-marker ${index === currentTheme ? 'active' : ''}`}
+                    //           onClick={() => setCurrentTheme(index)}
+                    //         >
+                    //           ·
+                    //         </div>
+                    //       ))}
+                    //   </div>
+
+                    // <div className="theme-slider" onMouseDown={handleDragStart}>
+                    //   <div className="slider-track" ref={sliderTrackRef}>
+                    //     <div
+                    //       className="slider-icon"
+                    //       style={{ top: `${(currentTheme / 16) * 100}%` }}
+                    //       onMouseDown={(e) => { e.stopPropagation(); handleDragStart(e) }}
+                    //       onTouchStart={(e) => { e.stopPropagation(); handleDragStart(e) }}
+                    //     >
+                    //       <SunIcon />
+                    //     </div>
+                    //   </div>
+                    // </div>
+
+                    <div className="theme-slider" onMouseDown={handleDragStart}>
+                      <div className="slider-track" ref={sliderTrackRef}>
+                        {[...Array(17)].map((_, index) => {
+                          const markerSpacing = (100 - 6) / 16
+                          const position = index * markerSpacing
+
+                          return (
                             <div
                               key={index}
-                              className={`slider-marker ${index === currentTheme ? 'active' : ''}`}
-                              onClick={() => setCurrentTheme(index)}
-                            >
-                              ·
-                            </div>
-                          ))}
-                      </div>
-                      <div
-                        className="slider-icon"
-                        style={{ top: `${currentTheme * (100 / 17)}%` }}
-                      >
-                        <SunIcon />
+                              className="slider-marker"
+                              style={{ top: `${position}%` }}
+                            />
+                          )
+                        })}
+
+                        {/* Slider Icon */}
+                        <div
+                          className="slider-icon"
+                          style={{ top: `${(currentTheme / 16) * 90}%` }}
+                          onMouseDown={(e) => { e.stopPropagation(); handleDragStart(e) }}
+                          onTouchStart={(e) => { e.stopPropagation(); handleDragStart(e) }}
+                        >
+                          <SunIcon />
+                        </div>
                       </div>
                     </div>
                   )}

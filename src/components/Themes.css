@@ -151,7 +151,7 @@ body {
   bottom: 6px;
   transform: translateX(50%);
   width: 1.6rem;
-  height: 18rem;
+  height: 19rem;
   background-color: #222;
   border-radius: 1.6rem;
   display: flex;
@@ -169,18 +169,6 @@ body {
   gap: 0.6rem;
 }
 
-.slider-marker {
-  width: .5rem;
-  height: .5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: 400;
-}
-
-.slider-marker.active {
-  color: #fff;
-}
-
 .slider-icon {
   position: absolute;
   width: 1.5rem;
@@ -190,6 +178,24 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
-  transition: top 0.3s ease;
-  pointer-events: none;
+  background: #222;
+  transition: top 0.2s linear;
+  cursor: grab;
+  z-index: 10;
+}
+
+.slider-icon:active {
+  cursor: grabbing;
+}
+
+.slider-marker {
+  position: absolute;
+  left: 50%;
+  width: 2px; 
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  margin: 3px 0;
 }
